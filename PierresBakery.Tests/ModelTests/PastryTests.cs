@@ -13,13 +13,14 @@ namespace BakeryPastry.Tests
       Pastry newPastry = new Pastry("5");
       Assert.AreEqual(5, newPastry.Amount);
     }
-    // [TestMethod]
-    // public void GetPrice_TakeAmountAndReturnPrice_Int()
-    // {
-    //   Bread newBread = new Bread("5");
-    //   newBread.GetPrice();
-    //   Assert.AreEqual(5 * 4, newBread.Price);
-    // }
+    [TestMethod]
+    public void GetPrice_TakeAmountAndReturnPrice_Int()
+    {
+      Pastry newPastry = new Pastry("5");
+      int price = (5 *2) - ((5 -(5 % 3))/ 3);
+      newPastry.GetPrice();
+      Assert.AreEqual(price, newPastry.Price);
+    }
     // [TestMethod]
     // public void GetDiscount_TakeAmountAndReturnDiscount_Int()
     // {
