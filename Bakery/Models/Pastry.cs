@@ -1,11 +1,36 @@
-// using System;
+using System;
 
-// namespace ProjectName {
-//   public class Program
-//   {
-//     public static void Main()
-//     {
-//       Console.WriteLine(ClassName.Method("Behavior"));
-//     }
-//   }
-// }
+namespace BakeryPastry.Model
+{
+  public class Pastry
+  {
+    private static int _price = 5;
+    public int Amount { get; set; }
+    public int Price { get; set; }
+    
+    public Pastry(string input)
+    {
+      Amount = int.Parse(input);
+    }
+
+    // public int GetPrice()
+    // {
+    //   if (Amount >= 3)
+    //   {
+    //     Price = (Amount * _price) - GetDiscount();
+    //     return Price;
+    //   }
+    //   else
+    //   {
+    //     Price = (Amount * _price);
+    //     return Price;
+    //   }
+    //   return Price;
+    // }
+    // public int GetDiscount()
+    // {                 //3    - (0) / 3 * 5
+    //   int discount = (Amount - (Amount % 3)) / 3 * _price;
+    //   return discount;
+    // }
+  }
+}
