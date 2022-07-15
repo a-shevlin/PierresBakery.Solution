@@ -139,7 +139,12 @@ namespace Bakery
             {
               selected = "B";
             }
-            Console.WriteLine("> THANK YOU FOR YOUR PURCHASE");
+            Console.WriteLine(" __________________________");
+            Console.WriteLine("///////////////////////////|");
+            Console.WriteLine("                           |");
+            Console.WriteLine("THANK YOU FOR YOUR PURCHASE|");
+            Console.WriteLine("___________________________|");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
             Console.WriteLine("> Enter any key to leave");
             Console.ReadLine().ToUpper();
             makeOrder = "N";
