@@ -16,24 +16,25 @@ namespace BakeryPastry.Tests
     [TestMethod]
     public void GetPrice_TakeAmountAndReturnPrice_Int()
     {
-      Pastry newPastry = new Pastry("5");
-      int price = (5 *2) - ((5 -(5 % 3))/ 3);
+      Pastry newPastry = new Pastry("1");
+      int price = (2);
       newPastry.GetPrice();
       Assert.AreEqual(price, newPastry.Price);
     }
-    // [TestMethod]
-    // public void GetDiscount_TakeAmountAndReturnDiscount_Int()
-    // {
-    //   Bread newBread = new Bread("3");
-    //   int discount = newBread.GetDiscount();
-    //   Assert.AreEqual(5, discount);
-    // }
-    // [TestMethod]
-    // public void GetPrice_TakeAmountAndReturnDiscountedPrice_Int()
-    // {
-    //   Bread newBread = new Bread("3");
-    //   newBread.GetPrice();
-    //   Assert.AreEqual(10, newBread.Price);
-    // }
+    [TestMethod]
+    public void GetDiscount_TakeAmountAndReturnDiscount_Int()
+    {
+      Pastry newPastry = new Pastry("3");
+      int discount = newPastry.GetDiscount();
+      Assert.AreEqual(1, discount);
+    }
+    [TestMethod]
+    public void GetPrice_TakeAmountAndReturnDiscountedPrice_Int()
+    {
+      Pastry newPastry = new Pastry("5");
+      newPastry.GetPrice();
+      int price = (5 * 2) - ((5 -(5 % 3))/ 3);
+      Assert.AreEqual(price, newPastry.Price);
+    }
   }
 }
