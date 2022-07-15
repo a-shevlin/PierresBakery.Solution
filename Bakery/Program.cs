@@ -35,6 +35,14 @@ namespace Bakery
       Console.WriteLine("|_____________________________| \n");
       Console.WriteLine("Would you like to place an order? \n > Enter Y for YES and ANY OTHER for NO");
       string makeOrder = Console.ReadLine().ToUpper();
+      while (makeOrder == "Y")
+      {
+        Console.Clear();
+        Console.WriteLine("_______________________________");
+        Console.WriteLine("//////////////////////////////|");
+        Console.WriteLine("|                             |");
+        Console.WriteLine("| What would you like to order? |");
+      }
     }
   }
 }
