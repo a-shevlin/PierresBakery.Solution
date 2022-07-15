@@ -93,6 +93,8 @@ Copyright (c) 2022 Alex Shevlin
 
 ### **Tests**
 
+  #### *Cart Tests*
+
 <table>
   <tr>
     <th>Describe</th>
@@ -100,12 +102,87 @@ Copyright (c) 2022 Alex Shevlin
     <th>Expected Output</th>
   </tr>
   <tr>
-    <td></td>
+    <td>take input and return.</td>
+    <td>Cart newCart = new Cart(0, 0, 0, 0);</td>
+    <td>newCart.BreadAmount == 0;</td>
+  </tr>
+</table>
+
+#### *Bread Tests*
+
+<table>
+  <tr>
+    <th>Describe</th>
+    <th>Code</th>
+    <th>Expected Output</th>
+  </tr>
+  <tr>
+    <td>take amount and return.</td>
+    <td>Bread newBread = new Bread("5");</td>
+    <td>newBread.Amount == 5;</td>
+  </tr>
+  <tr>
+    <td>take amount and return discount.</td>
     <td>
+      Bread newBread = new Bread("3");
     <br>
-    <br>
-    <br>
+      int discount = newBread.GetDiscount();
     </td>
-    <td></td>
+    <td>discount == 5;</td>
+  </tr>
+  <tr>
+    <td>take amount and return discounted price</td>
+    <td>
+      Bread newBread = new Bread("3");
+    <br>
+      newBread.GetPrice();
+    </td>
+    <td>newBread.Price == 10;</td>
+  </tr>
+</table>
+
+#### *Pastry Tests*
+
+<table>
+  <tr>
+    <th>Describe</th>
+    <th>Code</th>
+    <th>Expected Output</th>
+  </tr>
+  <tr>
+    <td>take amount and return</td>
+    <td>Pastry newPastry = new Pastry("5");</td>
+    <td>newPastry.Amount == 5;</td>
+  </tr>
+  <tr>
+    <td>take amount and return price</td>
+    <td>
+      Pastry newPastry = new Pastry("1");
+    <br>
+      int price = (2);
+    <br>
+      newPastry.GetPrice();
+    </td>
+    <td>newPastry.Price == price;</td>
+  </tr>
+  <tr>
+    <td>take amount and return discount</td>
+    <td>
+      Pastry newPastry = new Pastry("3");
+    <br>
+      int discount = newPastry.GetDiscount();
+    </td>
+    <td>discount == 1;</td>
+  </tr>
+  <tr>
+    <td>take amount and return discounted price</td>
+    <td>
+      Pastry newPastry = new Pastry("5");
+    <br>
+      newPastry.GetPrice();
+    <br>
+      int price = (5 * 2) - ((5 -(5 % 3))/ 3);
+    </td>
+    <td>newPastry.Price == price;</td>
   </tr>
   </table>
