@@ -83,9 +83,6 @@ namespace Bakery
           }
           brAmount = breadAmount;
           brPrice = breadCost;
-          Console.Clear();
-          Console.WriteLine("> Enter C for CHECKOUT or P for PASTRY");
-          selected = Console.ReadLine().ToUpper();
         }
         else if (selected == "P")
         {
@@ -111,9 +108,6 @@ namespace Bakery
           }
           paAmount = pastryAmount;
           paPrice = pastryCost;
-          Console.Clear();
-          Console.WriteLine("> Enter C for CHECKOUT or B for BREAD");
-          selected = Console.ReadLine().ToUpper();
         }
         else if (selected == "C")
         {
@@ -139,12 +133,16 @@ namespace Bakery
             Console.WriteLine("|__________________________|");
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
             Console.WriteLine("> Would you like to purchase?");
+            Console.WriteLine("> Enter Y for YES and N for NO");
             string checkout =  Console.ReadLine().ToUpper();
             if (checkout != "Y")
             {
               selected = "B";
             }
             Console.WriteLine("> THANK YOU FOR YOUR PURCHASE");
+            Console.WriteLine("> Enter any key to leave");
+            Console.ReadLine().ToUpper();
+            makeOrder = "N";
           }
 
         }
