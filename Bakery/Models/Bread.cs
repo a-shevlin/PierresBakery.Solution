@@ -17,7 +17,7 @@ namespace BakeryBread.Model
     {
       if (Amount >= 3)
       {
-        Price = (Amount * _price);
+        Price = (Amount * _price) - GetDiscount();
         return Price;
       }
       else

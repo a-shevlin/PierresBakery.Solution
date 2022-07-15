@@ -18,7 +18,7 @@ namespace BakeryBread.Tests
     {
       Bread newBread = new Bread("5");
       newBread.GetPrice();
-      Assert.AreEqual(5 * 5, newBread.Price);
+      Assert.AreEqual(5 * 4, newBread.Price);
     }
     [TestMethod]
     public void GetDiscount_TakeAmountAndReturnDiscount_Int()
@@ -26,6 +26,13 @@ namespace BakeryBread.Tests
       Bread newBread = new Bread("3");
       int discount = newBread.GetDiscount();
       Assert.AreEqual(5, discount);
+    }
+    [TestMethod]
+    public void GetPrice_TakeAmountAndReturnDiscountedPrice_Int()
+    {
+      Bread newBread = new Bread("3");
+      newBread.GetPrice();
+      Assert.AreEqual(10, newBread.Price);
     }
   }
 }
