@@ -5,10 +5,26 @@
 #### _A console application that allows users to see the price of pastries, accounting for discounts._  
 
 ---
+
+## Table of Contents
+
+**[Technologies Used](#technologies-used)  
+[Description](#description)  
+[Technology Requirements](#technology-requirements)  
+[Setup and Installation](#setupinstallation-requirements)  
+[Known Bugs](#known-bugs)  
+[License](#license)  
+[Contact Info](#contact-information)  
+[Tests](#tests)**
+
+---
+
 ## Technologies Used
 
 * _C#_
-* _.NET_
+* _.NET 5.0_
+* _MS Test_
+* _Markdown_
 
 ---
 ## Description
