@@ -4,14 +4,13 @@ using BakeryBread.Model;
 namespace BakeryBread.Tests
 {
   [TestClass]
-  public class Bread
+  public class BreadTests
   {
     [TestMethod]
     public void Bread_TakeAmountAndReturn_Int()
     {
-      int amount = 5;
-      Bread newBread = new Bread(amount);
-      Assert.AreEqual(amount, newBread.Amount);
+      Bread newBread = new Bread("5");
+      Assert.AreEqual("5", newBread.Amount);
     }
   }
 }
