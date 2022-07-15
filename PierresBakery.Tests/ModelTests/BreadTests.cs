@@ -9,8 +9,15 @@ namespace BakeryBread.Tests
     [TestMethod]
     public void Bread_TakeAmountAndReturn_Int()
     {
-      Bread newBread = new Bread("5");
-      Assert.AreEqual("5", newBread.Amount);
+      Bread newBread = new Bread(5);
+      Assert.AreEqual(5, newBread.Amount);
+    }
+    [TestMethod]
+    public void GetPrice_TakeAmountAndReturnPrice_Int()
+    {
+      Bread newBread = new Bread(5);
+      newBread.GetPrice();
+      Assert.AreEqual(5 * 5, newBread.Price);
     }
   }
 }
