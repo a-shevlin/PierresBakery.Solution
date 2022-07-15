@@ -1,6 +1,7 @@
 using System;
 using BakeryPastry.Model;
 using BakeryBread.Model;
+using BakeryCart.Model;
 
 namespace Bakery 
 {
@@ -12,6 +13,12 @@ namespace Bakery
       baseBread.GetPrice();
       Pastry basePastry = new Pastry("1");
       basePastry.GetPrice();
+
+      Cart userCart = new Cart(0, 0, 0, 0);
+      int brAmount = userCart.BreadAmount;
+      int brPrice = userCart.BreadPrice;
+      int paAmount = userCart.PastryAmount;
+      int paPrice = userCart.PastryPrice;
 
       Console.Clear();
       Console.WriteLine(" __________________________");
@@ -38,18 +45,18 @@ namespace Bakery
       Console.WriteLine("| * Pastry - Buy 2 Get 3rd    |");
       Console.WriteLine("|                  HALF OFF   |");
       Console.WriteLine("|_____________________________| \n");
-      Console.WriteLine("Would you like to place an order? \n > Enter Y for YES and ANY OTHER for NO");
+      Console.WriteLine("Would you like to place an order? \n> Enter Y for YES and ANY OTHER for NO");
       string makeOrder = Console.ReadLine().ToUpper();
       while (makeOrder == "Y")
       {
         Console.Clear();
-        Console.WriteLine("_________________________________");
-        Console.WriteLine("////////////////////////////////|");
-        Console.WriteLine("|                               |");
-        Console.WriteLine("| What would you like to order? |");
-        Console.WriteLine("|_______________________________|");
-        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
-        Console.WriteLine("> Enter B for BREAD and P for PASTRY");
+        Console.WriteLine("_____________________________________");
+        Console.WriteLine("////////////////////////////////////|");
+        Console.WriteLine("|                                   |");
+        Console.WriteLine("| [ BREAD ] [ PASTRY ] [ CHECKOUT ] |");
+        Console.WriteLine("|___________________________________|");
+        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
+        Console.WriteLine("> Enter B for BREAD or P for PASTRY or C for CHECKOUT");
         string selected = Console.ReadLine().ToUpper();
         if (selected == "B")
         {
@@ -74,6 +81,9 @@ namespace Bakery
             breadCostLoop(breadCost, breadAmount);
             breadCorrect = Console.ReadLine().ToUpper();
           }
+          brAmount = breadAmount;
+          brPrice = breadCost;
+          Console.Clear();
           Console.WriteLine("> Enter C for CHECKOUT or P for PASTRY");
           selected = Console.ReadLine().ToUpper();
         }
@@ -85,27 +95,57 @@ namespace Bakery
           userPastry.GetPrice();
           int pastryCost = userPastry.Price;
           int pastryAmount = userPastry.Amount;
-          Console.Clear();
           pastryCostLoop(pastryCost, pastryAmount);
           string pastryCorrect = Console.ReadLine().ToUpper();
           if (pastryCorrect != "Y")
           {
+            Console.Clear();
             pastryLoop();
             pastryOrder = Console.ReadLine();
             userPastry = new Pastry(pastryOrder);
             userPastry.GetPrice();
             pastryCost = userPastry.Price;
             pastryAmount = userPastry.Amount;
-            Console.Clear();
             pastryCostLoop(pastryCost, pastryAmount);
             pastryCorrect = Console.ReadLine().ToUpper();
           }
-
-          Console.WriteLine("> Enter C for CHECKOUT or P for PASTRY");
+          paAmount = pastryAmount;
+          paPrice = pastryCost;
+          Console.Clear();
+          Console.WriteLine("> Enter C for CHECKOUT or B for BREAD");
           selected = Console.ReadLine().ToUpper();
         }
         else if (selected == "C")
         {
+          Console.Clear();
+          Console.WriteLine("________________________________");
+          Console.WriteLine("///////////////////////////////|");
+          Console.WriteLine("|                              |");
+          Console.WriteLine("|  Are you ready to checkout?  |");
+          Console.WriteLine("|______________________________|");
+          Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
+          Console.WriteLine("> Enter Y for YES and N for NO");
+          string ready = Console.ReadLine().ToUpper();
+          if (ready == "Y")
+          {
+            Console.Clear();
+            int total = paPrice + brPrice;
+            Console.WriteLine("____________________________");
+            Console.WriteLine("///////////////////////////|");
+            Console.WriteLine("|                          |");
+            Console.WriteLine($"| Your total is ${total} for    |");
+            Console.WriteLine($"|      {brAmount} loaves of bread.  |");
+            Console.WriteLine($"|              {paAmount} pastries. |");
+            Console.WriteLine("|__________________________|");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
+            Console.WriteLine("> Would you like to purchase?");
+            string checkout =  Console.ReadLine().ToUpper();
+            if (checkout != "Y")
+            {
+              selected = "B";
+            }
+            Console.WriteLine("> THANK YOU FOR YOUR PURCHASE");
+          }
 
         }
 
@@ -115,8 +155,8 @@ namespace Bakery
           Console.WriteLine("_________________________________");
           Console.WriteLine("////////////////////////////////|");
           Console.WriteLine("|                               |");
-          Console.WriteLine("| How many loaves of bread      |");
-          Console.WriteLine("|      would you like to order? |");
+          Console.WriteLine("| How many loaves of BREAD      |");
+          Console.WriteLine("|      would you like to ORDER? |");
           Console.WriteLine("|_______________________________|");
           Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| \n");
           Console.WriteLine("> Enter number of loaves to add to cart.");
@@ -124,6 +164,7 @@ namespace Bakery
 
         void breadCostLoop(int breadCost, int breadAmount)
         {
+          Console.Clear();
           Console.WriteLine("____________________________");
           Console.WriteLine("///////////////////////////|");
           Console.WriteLine("|                          |");
@@ -149,6 +190,7 @@ namespace Bakery
 
         void pastryCostLoop(int pastryCost, int pastryAmount)
         {
+          Console.Clear();
           Console.WriteLine("____________________________");
           Console.WriteLine("///////////////////////////|");
           Console.WriteLine("|                          |");
