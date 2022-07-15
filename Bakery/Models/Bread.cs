@@ -8,9 +8,9 @@ namespace BakeryBread.Model
     public int Amount { get; set; }
     public int Price { get; set; }
     
-    public Bread(int input)
+    public Bread(string input)
     {
-      Amount = input;
+      Amount = int.Parse(input);
     }
 
     public int GetPrice()
@@ -26,6 +26,11 @@ namespace BakeryBread.Model
         return Price;
       }
       return Price;
+    }
+    public int GetDiscount()
+    {
+      int discount = (Amount - (Amount % 3)) / 3 * _price;
+      return discount;
     }
   }
 }
