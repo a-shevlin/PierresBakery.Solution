@@ -10,7 +10,7 @@ namespace BakeryBread.Model
     
     public Bread(string input)
     {
-      Amount = int.Parse(input);
+      Amount = Math.Abs(int.Parse(input));
     }
 
     public int GetPrice()
