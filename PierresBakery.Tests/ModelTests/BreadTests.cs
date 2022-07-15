@@ -25,7 +25,7 @@ namespace BakeryBread.Tests
     {
       Bread newBread = new Bread("3");
       int discount = newBread.GetDiscount();
-      Assert.AreEqual(10, discount);
+      Assert.AreEqual(5, discount);
     }
   }
 }

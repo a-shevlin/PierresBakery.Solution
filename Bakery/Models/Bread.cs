@@ -15,20 +15,20 @@ namespace BakeryBread.Model
 
     public int GetPrice()
     {
-      if (Amount >= 1)
+      if (Amount >= 3)
       {
         Price = (Amount * _price);
         return Price;
       }
       else
       {
-        Price = 0;
+        Price = (Amount * _price);
         return Price;
       }
       return Price;
     }
     public int GetDiscount()
-    {
+    {                 //3    - (0) / 3 * 5
       int discount = (Amount - (Amount % 3)) / 3 * _price;
       return discount;
     }
