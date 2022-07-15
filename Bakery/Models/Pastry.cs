@@ -25,7 +25,6 @@ namespace BakeryPastry.Model
         Price = (Amount * _price);
         return Price;
       }
-      return Price;
     }
     public int GetDiscount()
     {                 //3    - (0) / 3 * 5
